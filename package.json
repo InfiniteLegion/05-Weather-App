@@ -1,0 +1,24 @@
+{
+  "name": "05-weather-app",
+  "version": "1.0.0",
+  "description": "Self educational weather app for theodinproject.com course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "InfiniteLegion",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@mdi/js": "^7.4.47",
+    "css-loader": "^7.1.4",
+    "date-fns": "^4.4.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.7",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.108.4",
+    "webpack-cli": "^7.2.1",
+    "webpack-dev-server": "^6.0.0"
+  }
+}
