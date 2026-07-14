@@ -1,3 +1,4 @@
 import '../style.css';
+import { renderHeaderExtras } from './dom/header.js';
 
-console.log('Test');
+renderHeaderExtras();
