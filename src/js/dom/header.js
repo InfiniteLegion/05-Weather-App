@@ -1,5 +1,7 @@
 import { mdiMagnify } from "@mdi/js";
 import { createIcon } from "./common.js";
+import { getCityWeather } from "../api/weatherApi.js";
+import { renderMain } from "./main.js";
 
 export function renderHeaderExtras() {
     renderSearchBtn();
@@ -10,4 +12,26 @@ function renderSearchBtn() {
     const icon = createIcon(mdiMagnify, { className: 'icon icon-search', title: 'Search' });
 
     btn.append(icon);
+    btn.addEventListener('click', () => {
+        search();
+    });
+
+    document.getElementById('search-input').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            search();
+            e.target.blur();
+        }
+    });
+}
+
+async function search() {
+    const unit = document.getElementById('search-select-temperature').value;
+    const input = document.getElementById('search-input');
+    const city = input.value.trim();
+
+    if (city.length > 0) {
+        const data = await getCityWeather(city, unit);
+        renderMain(city, data, unit);
+        input.value = '';
+    }
 }

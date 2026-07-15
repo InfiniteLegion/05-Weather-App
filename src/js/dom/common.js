@@ -19,3 +19,7 @@ export function createIcon(path, { color = 'currentColor', className = '', title
     svg.append(pathEl);
     return svg;
 }
+
+export function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}

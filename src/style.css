@@ -18,6 +18,16 @@
 
     --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
     --shadow-md: 0 10px 25px 05px rgba(15, 23, 42, 0.08);
+
+    --bg-clear-day: linear-gradient(135deg, #ffbc42, #ff9f1c); 
+    --bg-clear-night: linear-gradient(135deg, #1d2d44, #0f172a);
+    --bg-cloudy: linear-gradient(135deg, #a0aab2, #7a8894);
+    --bg-partly-cloudy-day: linear-gradient(135deg, #74b9ff, #a0aab2);
+    --bg-partly-cloudy-night: linear-gradient(135deg, #2c3e50, #1d2d44);
+    --bg-rain: linear-gradient(135deg, #48cae4, #0077b6);
+    --bg-snow: linear-gradient(135deg, #e0f2fe, #bae6fd);
+    --bg-thunder: linear-gradient(135deg, #5c3d75, #3c1e50);
+    --bg-mist-fog: linear-gradient(135deg, #cbd5e1, #94a3b8);
 }
 
 body {
@@ -100,16 +110,100 @@ header {
 
 /* main section */
 
-.content {
+#content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
     background-color: var(--bg-main);
 }
 
-.weather-header {
-    color: var(--text-main);
+.current-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
 }
 
-.card {
-    background-color: var(--bg-card);
-    box-shadow: var(--shadow-md);
+.current-header {
+    color: var(--text-main);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 4em;
+}
+
+.current-weather-block {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.current-weather-icon {
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    max-height: 300px;
+    display: block;
+    margin: 0 auto;
+    align-self: center;
+}
+
+.current-info {
+    padding: 0 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.current-text {
+    font-size: 2em;
+}
+
+.bg-clear-day {
+    background: var(--bg-clear-day);
+}
+
+.bg-clear-night,
+.bg-snow-showers-night {
+    background: var(--bg-clear-night);
+}
+
+.bg-cloudy {
+    background: var(--bg-cloudy);
+}
+
+.bg-partly-cloudy-day,
+.bg-showers-day,
+.bg-rain-snow-showers-day {
+    background: var(--bg-partly-cloudy-day);
+}
+
+.bg-partly-cloudy-night,
+.bg-showers-night,
+.bg-rain-snow-showers-night {
+    background: var(--bg-partly-cloudy-night);
+}
+
+.bg-rain,
+.bg-rain-snow {
+    background: var(--bg-rain);
+}
+
+.bg-snow,
+.bg-snow-showers-day,
+.bg-sleet,
+.bg-hail {
+    background: var(--bg-snow);
+}
+
+.bg-thunder,
+.bg-thunder-rain,
+.bg-thunder-showers-day,
+.bg-thunder-showers-night {
+    background: var(--bg-thunder);
+}
+
+.bg-fog,
+.bg-wind {
+    background: var(--bg-mist-fog);
 }

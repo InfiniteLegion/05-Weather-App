@@ -1,5 +1,6 @@
 import path from "node:path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 import { watchFile } from "node:fs";
 import test from "node:test";
 
@@ -15,6 +16,14 @@ export default {
     devServer: { watchFiles: ["./src/template.html"], },
     plugins: [ 
         new HtmlWebpackPlugin({template: "./src/template.html"}),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(import.meta.dirname, "src/assets/icons"),
+                    to: path.resolve(import.meta.dirname, "dist/assets/icons")
+                }
+            ]
+        })
     ],
     module: {
         rules: [
