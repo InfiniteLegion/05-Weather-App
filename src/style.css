@@ -5,19 +5,12 @@
 
 :root {
     --bg-header: #0f52ba;
-    --bg-main: #f0f9ff;
+    --bg-main: #e5eff5;
     --bg-card: #fff;
 
     --text-main: #0f172a;
     --text-muted: #64748b;
     --text-light: #fff;
-
-    --accent-sun: #f59e0b;
-    --accent-rain: #38bdf8;
-    --border-color: #e2e8f0;
-
-    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
-    --shadow-md: 0 10px 25px 05px rgba(15, 23, 42, 0.08);
 
     --bg-clear-day: linear-gradient(135deg, #ffbc42, #ff9f1c); 
     --bg-clear-night: linear-gradient(135deg, #1d2d44, #0f172a);
@@ -117,13 +110,13 @@ header {
     background-color: var(--bg-main);
 }
 
-.current-wrapper {
+.weather-wrapper {
     display: flex;
     flex-direction: column;
     padding: 5px;
 }
 
-.current-header {
+.weather-header {
     color: var(--text-main);
     text-align: center;
     padding: 10px 0;
@@ -157,6 +150,46 @@ header {
 
 .current-text {
     font-size: 2em;
+}
+
+.weather-forecast-block {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+.forecast-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.forecast-weather-icon {
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
+    display: block;
+    margin: auto;
+    align-self: center;
+}
+
+.forecast-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.forecast-text {
+    font-size: 1.1em;
 }
 
 .bg-clear-day {
