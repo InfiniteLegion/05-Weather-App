@@ -31,7 +31,31 @@ async function search() {
 
     if (city.length > 0) {
         const data = await getCityWeather(city, unit);
+
+        if (!data) {
+            showError('Could not found city. Check enter data');
+            return;
+        }
+        
+        hideError();
         renderMain(city, data, unit);
         input.value = '';
     }
 }
+
+function showError(message) {
+    const modal = document.getElementById('modal-error');
+    const text = document.getElementById('modal-error-text');
+
+    text.textContent = message;
+    
+    modal.style.display = 'flex';
+}
+
+function hideError() {
+    const modal = document.getElementById('modal-error');
+    modal.style.display = 'none';
+    document.getElementById('search-input').value = '';
+}
+
+document.getElementById('modal-error-close').addEventListener('click', hideError);
